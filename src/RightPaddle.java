@@ -1,6 +1,6 @@
 import processing.core.PApplet;
 
-public class RightPaddle extends PApplet
+public class RightPaddle
 {
 	PApplet rp;
 	float x;
@@ -13,7 +13,12 @@ public class RightPaddle extends PApplet
 	  boolean goDown = false;
 
 	  boolean intersect = false;
-
+	  
+	  RightPaddle(PApplet r)
+	  {
+		  rp = r;
+	  }
+	  
 	  RightPaddle(float x_, float y_) 
 	  {
 	    x = x_;
@@ -23,7 +28,7 @@ public class RightPaddle extends PApplet
 	  void display() 
 	  {
 	    rp.fill(c);
-	    rp.rectMode(CENTER);
+	    rp.rectMode(PApplet.CENTER);
 	    rp.noStroke();
 
 	    rp.rect(x, y, w, h);
@@ -36,11 +41,11 @@ public class RightPaddle extends PApplet
 	    goUp = up_;
 	    goDown = down_;
 
-	    if (keyPressed) 
+	    if (rp.keyPressed) 
 	    {
-	      if (key == CODED) 
+	      if (rp.key == PApplet.CODED) 
 	      {
-	        if (keyCode == UP) 
+	        if (rp.keyCode == PApplet.UP) 
 	        {
 	          goUp = true;
 	        }
@@ -53,11 +58,11 @@ public class RightPaddle extends PApplet
 	    }
 
 
-	    if (keyPressed) 
+	    if (rp.keyPressed) 
 	    {
-	      if (key == CODED) 
+	      if (rp.key == PApplet.CODED) 
 	      {
-	        if (keyCode == DOWN) 
+	        if (rp.keyCode == PApplet.DOWN) 
 	        {
 	          goDown = true;
 	        }

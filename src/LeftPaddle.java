@@ -1,6 +1,6 @@
 import processing.core.PApplet;
 
-public class LeftPaddle extends PApplet
+public class LeftPaddle
 {
 	PApplet lp;
 	float x;
@@ -13,7 +13,12 @@ public class LeftPaddle extends PApplet
 	  boolean goDown = false;
 
 	  boolean intersect = false;
-
+	  
+	  LeftPaddle(PApplet p)
+	  {
+		  lp = p;
+	  }
+	  
 	  LeftPaddle(float x_, float y_) 
 	  {
 	    x = x_;
@@ -22,12 +27,12 @@ public class LeftPaddle extends PApplet
 
 	  void display() 
 	  {
-	    fill(c);
-	    rectMode(CENTER);
-	    noStroke();
+	    lp.fill(c);
+	    lp.rectMode(PApplet.CENTER);
+	    lp.noStroke();
 
-	    rect(x, y, w, h);
-	    y = constrain(y, 0+h/2, height-h/2);
+	    lp.rect(x, y, w, h);
+	    y = PApplet.constrain(y, 0+h/2, lp.height-h/2);
 	  }
 
 	  void move(boolean up_, boolean down_) 
@@ -35,9 +40,9 @@ public class LeftPaddle extends PApplet
 	    goUp = up_;
 	    goDown = down_;
 
-	    if (keyPressed) 
+	    if (lp.keyPressed) 
 	    {
-	      if (key == 'w' || key == 'W') 
+	      if (lp.key == 'w' || lp.key == 'W') 
 	      {
 	        goUp = true;
 	      }
@@ -48,9 +53,9 @@ public class LeftPaddle extends PApplet
 	      y = y - 10;
 	    }
 
-	    if (keyPressed) 
+	    if (lp.keyPressed) 
 	    {
-	      if (key == 's' || key == 'S') 
+	      if (lp.key == 's' || lp.key == 'S') 
 	      {
 	        goDown = true;
 	      }
@@ -64,7 +69,7 @@ public class LeftPaddle extends PApplet
 
 	  boolean intersect(Ball b)
 	  {
-	    if (dist(x+w/2, b.y, b.x, b.y) < b.r && b.y > y-h/2 && b.y < y+h/2) 
+	    if (PApplet.dist(x+w/2, b.y, b.x, b.y) < b.r && b.y > y-h/2 && b.y < y+h/2) 
 	    {
 	      return true;
 	    }

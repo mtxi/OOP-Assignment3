@@ -1,7 +1,8 @@
 import processing.core.PApplet;
 
-public class Ball extends PApplet
+public class Ball
 {
+
 	PApplet par;
 	
 	float x, y;
@@ -10,8 +11,13 @@ public class Ball extends PApplet
     
     Ball(float a, float b)
     {
-        x = a;
-        y = b;
+        this.x = a;
+        this.y = b;
+    }
+    
+    Ball(PApplet b)
+    {
+    	par = b;
     }
     
     void display()

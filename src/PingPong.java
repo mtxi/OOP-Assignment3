@@ -1,4 +1,4 @@
-import processing.core.PApplet;
+import processing.core.*;
 
 public class PingPong extends PApplet
 {
@@ -6,8 +6,7 @@ public class PingPong extends PApplet
 	LeftPaddle lPaddle;
 	RightPaddle rPaddle;
 	MidLine mLine;
-	float speedX = -4.0;
-	
+	float speedX = -4;
 	int scoreP1 = 0;
 	int scoreP2 = 0;
 	
@@ -16,11 +15,12 @@ public class PingPong extends PApplet
 	
 	boolean click = false;
 
+	
 	public void setup()
 	{
-		size(800,500);
-		smooth();
-		frameRate(30);
+		this.size(800,500);
+		this.smooth();
+		this.frameRate(30);
 		
 		ball = new Ball(400,250);
 		lPaddle = new LeftPaddle(60, height/2);
@@ -88,14 +88,14 @@ public class PingPong extends PApplet
 	            
 	            if (lPaddle.intersect(ball))
 	            {
-	               speedX = speedX * -1.15;
+	               speedX = speedX * -2;
 	               ball.x = lPaddle.x + lPaddle.w + ball.r;
 	               lPaddle.c = color(255, 0, 0);
 	            }
 	            
 	            if (rPaddle.intersect(ball))
 	            {
-	                speedX = speed * -1.15;
+	                speedX = (float) (speedX * -1.15);
 	                ball.x = rPaddle.x - rPaddle.w - ball.r;
 	                rPaddle.c = color(255, 0, 0);
 	            }
@@ -158,9 +158,9 @@ public class PingPong extends PApplet
 	        fill(255);
 	        textAlign(LEFT);
 	        textSize(15);
-	        text("Player 1: up = 'W', down = 'S'", 40, height*0.87);
-	        text("Player 2: up = 'UP arrow', down = 'DOWN arrow'", 40, height*0.92);
-	        text("Score 5 points to win! :)",width*0.74, height*.92);
+	        text("Player 1: up = 'W', down = 'S'", 40, (float) (height*0.87));
+	        text("Player 2: up = 'UP arrow', down = 'DOWN arrow'", 40, (float) (height*0.92));
+	        text("Score 5 points to win! :)", width/2, height);
 	    }
 	}
 	
