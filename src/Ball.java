@@ -1,8 +1,11 @@
+import processing.core.PApplet;
 
-public class Ball
+public class Ball extends PApplet
 {
+	PApplet par;
+	
 	float x, y;
-    float speedY = random(-4, -2);
+    float speedY = par.random(-4, -2);
     float r = 20;
     
     Ball(float a, float b)
@@ -13,9 +16,9 @@ public class Ball
     
     void display()
     {
-        noStroke();
-        fill(3, 255, 29);
-        ellipse(x, y, r*2, r*2);
+        par.noStroke();
+        par.fill(3, 255, 29);
+        par.ellipse(x, y, r*2, r*2);
     }
     
     void move(float spdX)
@@ -23,7 +26,7 @@ public class Ball
         x += spdX;
         y += speedY;
         
-        if ( y + r > height || y - r < 0 )
+        if ( y + r > par.height || y - r < 0 )
         {
             speedY *= -1;
         }
@@ -31,7 +34,7 @@ public class Ball
     
     boolean outRight()
     {
-        if ( x - r > width )
+        if ( x - r > par.width )
         {
             return true;
         }

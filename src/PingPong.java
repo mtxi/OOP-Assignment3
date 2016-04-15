@@ -1,4 +1,3 @@
-
 import processing.core.PApplet;
 
 public class PingPong extends PApplet
@@ -7,7 +6,7 @@ public class PingPong extends PApplet
 	LeftPaddle lPaddle;
 	RightPaddle rPaddle;
 	MidLine mLine;
-	float speedX = -4;
+	float speedX = -4.0;
 	
 	int scoreP1 = 0;
 	int scoreP2 = 0;

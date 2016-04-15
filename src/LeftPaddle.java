@@ -1,11 +1,13 @@
+import processing.core.PApplet;
 
-public class LeftPaddle 
+public class LeftPaddle extends PApplet
 {
+	PApplet lp;
 	float x;
 	  float y;
 	  float w = 20;
 	  float h = 100;
-	  color c = color(255);
+	  int c = lp.color(255);
 
 	  boolean goUp = false;
 	  boolean goDown = false;
