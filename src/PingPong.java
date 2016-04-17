@@ -2,6 +2,10 @@ import processing.core.*;
 
 public class PingPong extends PApplet
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Ball ball;
 	LeftPaddle lPaddle;
 	RightPaddle rPaddle;
@@ -16,15 +20,18 @@ public class PingPong extends PApplet
 	boolean click = false;
 
 	
+	public void settings()
+	{
+		size(800,800);
+		smooth();
+		frameRate(30);
+	}
+	
 	public void setup()
 	{
-		this.size(800,500);
-		this.smooth();
-		this.frameRate(30);
-		
 		ball = new Ball(400,250);
-		lPaddle = new LeftPaddle(60, height/2);
-		rPaddle = new RightPaddle(740, height/2);
+		lPaddle = new LeftPaddle(60, 400);
+		rPaddle = new RightPaddle(740, 400);
 		mLine = new MidLine();
 	}
 	

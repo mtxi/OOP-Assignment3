@@ -4,17 +4,17 @@ public class MidLine
 {
 	PApplet ml;
 	
-	MidLine()
+	public MidLine()
 	{
 	
 	}
 	
-	 MidLine(PApplet m)
+	 public MidLine(PApplet m)
 	 {
 	      ml = m;
 	 }
 	    
-	 void display()
+	 public void display()
 	 {
 	      for (int i = 0; i < ml.height + 50; i += 50)
 	      {

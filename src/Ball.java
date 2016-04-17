@@ -5,29 +5,29 @@ public class Ball
 
 	PApplet par;
 	
-	float x, y;
-    float speedY = par.random(-4, -2);
+	float x, y = 0;
+    float speedY = -4;
     float r = 20;
     
-    Ball(float a, float b)
+    public Ball(float a, float b)
     {
-        this.x = a;
-        this.y = b;
+        x = a;
+        y = b;
     }
     
-    Ball(PApplet b)
+    public Ball(PApplet b)
     {
     	par = b;
     }
     
-    void display()
+    public void display()
     {
         par.noStroke();
         par.fill(3, 255, 29);
         par.ellipse(x, y, r*2, r*2);
     }
     
-    void move(float spdX)
+    public void move(float spdX)
     {
         x += spdX;
         y += speedY;
@@ -38,7 +38,7 @@ public class Ball
         }
     }
     
-    boolean outRight()
+    public boolean outRight()
     {
         if ( x - r > par.width )
         {
@@ -50,7 +50,7 @@ public class Ball
         }
     }
     
-    boolean outLeft()
+    public boolean outLeft()
     {
         if (x + r < 0)
         {

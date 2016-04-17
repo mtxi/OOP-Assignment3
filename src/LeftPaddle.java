@@ -14,18 +14,18 @@ public class LeftPaddle
 
 	  boolean intersect = false;
 	  
-	  LeftPaddle(PApplet p)
+	  public LeftPaddle(PApplet p)
 	  {
 		  lp = p;
 	  }
 	  
-	  LeftPaddle(float x_, float y_) 
+	  public LeftPaddle(float x_, float y_) 
 	  {
 	    x = x_;
 	    y = y_;
 	  }
 
-	  void display() 
+	  public void display() 
 	  {
 	    lp.fill(c);
 	    lp.rectMode(PApplet.CENTER);
@@ -35,7 +35,7 @@ public class LeftPaddle
 	    y = PApplet.constrain(y, 0+h/2, lp.height-h/2);
 	  }
 
-	  void move(boolean up_, boolean down_) 
+	  public void move(boolean up_, boolean down_) 
 	  {
 	    goUp = up_;
 	    goDown = down_;
@@ -67,7 +67,7 @@ public class LeftPaddle
 	    }
 	  }
 
-	  boolean intersect(Ball b)
+	  public boolean intersect(Ball b)
 	  {
 	    if (PApplet.dist(x+w/2, b.y, b.x, b.y) < b.r && b.y > y-h/2 && b.y < y+h/2) 
 	    {

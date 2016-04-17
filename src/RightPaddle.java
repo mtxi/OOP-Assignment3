@@ -14,18 +14,18 @@ public class RightPaddle
 
 	  boolean intersect = false;
 	  
-	  RightPaddle(PApplet r)
+	  public RightPaddle(PApplet r)
 	  {
 		  rp = r;
 	  }
 	  
-	  RightPaddle(float x_, float y_) 
+	  public RightPaddle(float x_, float y_) 
 	  {
 	    x = x_;
 	    y = y_;
 	  }
 
-	  void display() 
+	  public void display() 
 	  {
 	    rp.fill(c);
 	    rp.rectMode(PApplet.CENTER);
@@ -36,7 +36,7 @@ public class RightPaddle
 	    y = PApplet.constrain(y, 0+h/2, high);
 	  }
 
-	  void move(boolean up_, boolean down_) 
+	  public void move(boolean up_, boolean down_) 
 	  {
 	    goUp = up_;
 	    goDown = down_;
@@ -75,7 +75,7 @@ public class RightPaddle
 	    }
 	  }
 
-	  boolean intersect(Ball b) 
+	  public boolean intersect(Ball b) 
 	  {
 	    if (PApplet.dist(x-w/2, b.y, b.x, b.y) < b.r && b.y > y-h/2 && b.y < y+h/2) 
 	    {
