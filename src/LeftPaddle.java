@@ -7,7 +7,6 @@ public class LeftPaddle
 	  float y;
 	  float w = 20;
 	  float h = 100;
-	  int c = lp.color(255);
 
 	  boolean goUp = false;
 	  boolean goDown = false;
@@ -27,6 +26,7 @@ public class LeftPaddle
 
 	  public void display() 
 	  {
+		  int c = lp.color(255);
 	    lp.fill(c);
 	    lp.rectMode(PApplet.CENTER);
 	    lp.noStroke();

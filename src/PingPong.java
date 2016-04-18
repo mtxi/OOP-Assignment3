@@ -97,18 +97,18 @@ public class PingPong extends PApplet
 	            {
 	               speedX = speedX * -2;
 	               ball.x = lPaddle.x + lPaddle.w + ball.r;
-	               lPaddle.c = color(255, 0, 0);
+	         
 	            }
 	            
 	            if (rPaddle.intersect(ball))
 	            {
 	                speedX = (float) (speedX * -1.15);
 	                ball.x = rPaddle.x - rPaddle.w - ball.r;
-	                rPaddle.c = color(255, 0, 0);
+	                
 	            }
 	            else
 	            {
-	               rPaddle.c = color(255); 
+	              
 	            }
 	            
 	            if (ball.outRight())

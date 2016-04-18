@@ -7,7 +7,6 @@ public class RightPaddle
 	  float y;
 	  float w = 20;
 	  float h = 100;
-	  int c = rp.color(255);
 
 	  boolean goUp = false;
 	  boolean goDown = false;
@@ -27,6 +26,7 @@ public class RightPaddle
 
 	  public void display() 
 	  {
+		  int c = rp.color(255);
 	    rp.fill(c);
 	    rp.rectMode(PApplet.CENTER);
 	    rp.noStroke();
