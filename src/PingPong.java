@@ -27,6 +27,8 @@ public class PingPong extends PApplet
 	
 	boolean click = false;
 	
+	PFont myFont = createFont("GillSansMT", 48);
+	
 	public void setup()
 	{
 	    size(displayWidth,displayHeight);
@@ -134,7 +136,7 @@ public class PingPong extends PApplet
 	            textSize(20);
 	            fill(255);
 	            text("Player One: " + scoreP1, 200, 50);
-	            text("Player Two: " + scoreP2, 600, 50);
+	            text("Player Two: " + scoreP2, 1150, 50);
 	            
 	            if (scoreP1 == 5)
 	            {
@@ -159,6 +161,7 @@ public class PingPong extends PApplet
 	    {
 	        background(0);
 	        
+	        textFont(myFont);
 	        fill(255);
 	        textSize(160);
 	        text("P     N G", width/2 + 50, height/2);
