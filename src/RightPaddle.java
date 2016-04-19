@@ -1,89 +1,89 @@
-import processing.core.PApplet;
+import processing.core.*;
 
-public class RightPaddle
+public class RightPaddle 
 {
-	PApplet rp;
-	float x;
-	  float y;
-	  float w = 20;
-	  float h = 100;
 
-	  boolean goUp = false;
-	  boolean goDown = false;
+  float x;
+  float y;
+  float w = 20;
+  float h = 100;
+  int c;
+  PApplet rp;
 
-	  boolean intersect = false;
-	  
-	  public RightPaddle(PApplet r)
-	  {
-		  rp = r;
-	  }
-	  
-	  public RightPaddle(float x_, float y_) 
-	  {
-	    x = x_;
-	    y = y_;
-	  }
+  boolean goUp = false;
+  boolean goDown = false;
 
-	  public void display() 
-	  {
-		  int c = rp.color(255);
-	    rp.fill(c);
-	    rp.rectMode(PApplet.CENTER);
-	    rp.noStroke();
+  boolean intersect = false;
 
-	    rp.rect(x, y, w, h);
-	    float high = (rp.height-h)/2;
-	    y = PApplet.constrain(y, 0+h/2, high);
-	  }
+  RightPaddle(float x_, float y_) 
+  {
+    x = x_;
+    y = y_;
+  }
+  
+  RightPaddle(PApplet r)
+  {
+	  rp = r;
+	  c = rp.color(255);
+  }
+  public void display() 
+  {
+    rp.fill(c);
+    rp.rectMode(PApplet.CENTER);
+    rp.noStroke();
 
-	  public void move(boolean up_, boolean down_) 
-	  {
-	    goUp = up_;
-	    goDown = down_;
+    rp.rect(x, y, w, h);
+    y = PApplet.constrain(y, 0+h/2, rp.height-h/2);
+  }
 
-	    if (rp.keyPressed) 
-	    {
-	      if (rp.key == PApplet.CODED) 
-	      {
-	        if (rp.keyCode == PApplet.UP) 
-	        {
-	          goUp = true;
-	        }
-	      }
-	    }
+  public void move(boolean up_, boolean down_) 
+  {
+    goUp = up_;
+    goDown = down_;
 
-	    if (goUp) 
-	    {
-	      y = y - 10;
-	    }
+    if (rp.keyPressed) 
+    {
+      if (rp.key == PApplet.CODED) 
+      {
+        if (rp.keyCode == PApplet.UP) 
+        {
+          goUp = true;
+        }
+      }
+    }
+
+    if (goUp) 
+    {
+      y = y - 10;
+    }
 
 
-	    if (rp.keyPressed) 
-	    {
-	      if (rp.key == PApplet.CODED) 
-	      {
-	        if (rp.keyCode == PApplet.DOWN) 
-	        {
-	          goDown = true;
-	        }
-	      }
-	    }
+    if (rp.keyPressed) 
+    {
+      if (rp.key == PApplet.CODED) 
+      {
+        if (rp.keyCode == PApplet.DOWN) 
+        {
+          goDown = true;
+        }
+      }
+    }
 
-	    if (goDown) 
-	    {
-	      y = y + 10;
-	    }
-	  }
+    if (goDown) 
+    {
+      y = y + 10;
+    }
+  }
 
-	  public boolean intersect(Ball b) 
-	  {
-	    if (PApplet.dist(x-w/2, b.y, b.x, b.y) < b.r && b.y > y-h/2 && b.y < y+h/2) 
-	    {
-	      return true;
-	    }
-	    else 
-	    {
-	      return false;
-	    }
-	  }
+  public boolean intersect(Ball b) 
+  {
+    if (PApplet.dist(x-w/2, b.y, b.x, b.y) < b.r && b.y > y-h/2 && b.y < y+h/2) 
+    {
+      return true;
+    }
+    else 
+    {
+      return false;
+    }
+  }
 }

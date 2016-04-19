@@ -1,28 +1,29 @@
-import processing.core.PApplet;
+import processing.core.*;
 
 public class MidLine
 {
+	int i;
 	PApplet ml;
-	int c = this.color(255);
 	
-	 MidLine()
-	{
-	
-	}
-	    
-	 void display()
-	 {
-	      for (int i = 0; i < 800; i += 50)
-	      {
-	          ml.fill(c);
-	          ml.noStroke();
-	          ml.rectMode(PApplet.CENTER);
-	          ml.rect(ml.width/2, i, 7, 30);
-	      }
-	 }
-
-	public int color(int i) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+    MidLine()
+    {
+      
+    }
+    
+    MidLine(PApplet m)
+    {
+    	ml = m;
+    }
+    
+    public void display()
+    {
+        for (i = 0; i < ml.height+50; i += 50)
+        {
+            ml.fill(255);
+            ml.noStroke();
+            ml.rectMode(PApplet.CENTER);
+            ml.rect(ml.width/2, i, 7, 30);
+        }
+    }
+    
 }

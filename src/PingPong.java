@@ -1,3 +1,6 @@
+// OOP Assignment #3
+// DT228/2 >> 2015-2016
+// Program based on the classic game of Pong / Ping-pong in real life
 import processing.core.*;
 
 public class PingPong extends PApplet
@@ -5,12 +8,13 @@ public class PingPong extends PApplet
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 2417473051777472017L;
 	Ball ball;
 	LeftPaddle lPaddle;
 	RightPaddle rPaddle;
 	MidLine mLine;
 	float speedX = -4;
+	
 	int scoreP1 = 0;
 	int scoreP2 = 0;
 	
@@ -18,26 +22,23 @@ public class PingPong extends PApplet
 	boolean p2Win = false;
 	
 	boolean click = false;
-
-	
-	public void settings()
-	{
-		size(800,800);
-		smooth();
-		frameRate(30);
-	}
 	
 	public void setup()
 	{
-		ball = new Ball(400,250);
-		lPaddle = new LeftPaddle(60, 400);
-		rPaddle = new RightPaddle(740, 400);
-		mLine = new MidLine();
+	    size(displayWidth,displayHeight);
+	    smooth();
+	    frameRate(30);
+	    
+	    ball = new Ball(400, 250);
+	    lPaddle = new LeftPaddle(60, height/2);
+	    rPaddle = new RightPaddle(740, height/2);
+	    mLine = new MidLine(this);
+	    
 	}
 	
 	public void draw()
 	{
-		if (click)
+	    if (click)
 	    {
 	        if (p1Win)
 	        {
@@ -63,7 +64,7 @@ public class PingPong extends PApplet
 	            textAlign(CENTER);
 	            fill(255);
 	            textSize(50);
-	            text("Player 2 wins!", width/2, height/2);
+	            text("Player 2 wins!",width/2, height/2);
 	            textSize(25);
 	            text("press 'R' to restart", width/2, height/2 + 40);
 	            textSize(25);
@@ -95,20 +96,20 @@ public class PingPong extends PApplet
 	            
 	            if (lPaddle.intersect(ball))
 	            {
-	               speedX = speedX * -2;
+	               speedX = (float) (speedX * -1.15);
 	               ball.x = lPaddle.x + lPaddle.w + ball.r;
-	         
+	               lPaddle.c = color(255, 0, 0);
 	            }
 	            
 	            if (rPaddle.intersect(ball))
 	            {
 	                speedX = (float) (speedX * -1.15);
 	                ball.x = rPaddle.x - rPaddle.w - ball.r;
-	                
+	                rPaddle.c = color(255, 0, 0);
 	            }
 	            else
 	            {
-	              
+	               rPaddle.c = color(255); 
 	            }
 	            
 	            if (ball.outRight())
@@ -165,23 +166,19 @@ public class PingPong extends PApplet
 	        fill(255);
 	        textAlign(LEFT);
 	        textSize(15);
-	        text("Player 1: up = 'W', down = 'S'", 40, (float) (height*0.87));
-	        text("Player 2: up = 'UP arrow', down = 'DOWN arrow'", 40, (float) (height*0.92));
-	        text("Score 5 points to win! :)", width/2, height);
+	        text("Player 1: up = 'W', down = 'S'", 40, height);
+	        text("Player 2: up = 'UP arrow', down = 'DOWN arrow'", 40, height);
+	        text("Score 5 points to win! :)",width*1/2, height);
 	    }
 	}
 	
 	public void mousePressed()
 	{
-		click = true;
+	    click = true;
 	}
-
-
-	public static void main(String args[]) 
-	{
-	    String[] a = {"MAIN"};
-	    PApplet.runSketch(a, new PingPong());
-	    
-	}
-
+	
+	public static void main(String args[]) {
+	    PApplet.main(new String[] { "--present", "PingPong" });
+	  }
+	
 }

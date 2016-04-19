@@ -2,29 +2,29 @@ import processing.core.PApplet;
 
 public class Ball
 {
-
-	PApplet par;
-	
-	float x, y = 0;
-    float speedY = -4;
-    float r = 20;
+    float x, y;
+    float r;
+    float speedY;
+    PApplet ball;
     
-    public Ball(float a, float b)
+    Ball(float a, float b)
     {
         x = a;
         y = b;
+        r = 20;
     }
     
-    public Ball(PApplet b)
+    Ball(PApplet b)
     {
-    	par = b;
+    	ball = b;
+    	speedY = ball.random(-4, -2);
     }
     
     public void display()
     {
-        par.noStroke();
-        par.fill(3, 255, 29);
-        par.ellipse(x, y, r*2, r*2);
+        ball.noStroke();
+        ball.fill(3, 255, 29);
+        ball.ellipse(x, y, r*2, r*2);
     }
     
     public void move(float spdX)
@@ -32,7 +32,7 @@ public class Ball
         x += spdX;
         y += speedY;
         
-        if ( y + r > par.height || y - r < 0 )
+        if ( y + r > ball.height || y - r < 0 )
         {
             speedY *= -1;
         }
@@ -40,7 +40,7 @@ public class Ball
     
     public boolean outRight()
     {
-        if ( x - r > par.width )
+        if ( x - r > ball.width )
         {
             return true;
         }
