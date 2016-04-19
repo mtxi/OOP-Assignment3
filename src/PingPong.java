@@ -15,12 +15,14 @@ public class PingPong extends PApplet
 	LeftPaddle lPaddle;
 	RightPaddle rPaddle;
 	MidLine mLine;
+	Score scorep;
 	
 	// declare variables
 	float speedX = -4;
 	
-	int scoreP1 = 0;
-	int scoreP2 = 0;
+	static int scoreP1 = 0;
+	static int scoreP2 = 0;
+	
 	
 	boolean p1Win = false;
 	boolean p2Win = false;
@@ -39,8 +41,9 @@ public class PingPong extends PApplet
 	    lPaddle = new LeftPaddle(this, 60, height/2);
 	    rPaddle = new RightPaddle(this, width - 50, height/2);
 	    mLine = new MidLine(this);
-	    
+	    scorep = new Score(this,30);
 	}
+	
 	
 	public void draw()
 	{
@@ -88,7 +91,7 @@ public class PingPong extends PApplet
 	        
 	        else
 	        {
-	            background(0);
+	            background(52, 50, 50);
 	            
 	            mLine.display();
 	            
@@ -123,6 +126,7 @@ public class PingPong extends PApplet
 	                ball.x = width/2;
 	                speedX = random(-4, -3);
 	                scoreP1++;
+	                
 	            }
 	            
 	            if (ball.outLeft())
@@ -130,13 +134,20 @@ public class PingPong extends PApplet
 	                ball.x = width/2;
 	                speedX = random(3,4);
 	                scoreP2++;
+	                
 	            }
+	           
 	            
 	            textAlign(CENTER);
 	            textSize(20);
 	            fill(255);
-	            text("Player One: " + scoreP1, 200, 50);
-	            text("Player Two: " + scoreP2, 1150, 50);
+	            text("PLAYER 1: " + scoreP1, 200, 50);
+	            text("PLAYER 2: " + scoreP2, 1150, 50);
+	            
+	            if (scoreP1 > 0 || scoreP2 > 0)
+	            {
+	            	scorep.display();
+	            }
 	            
 	            if (scoreP1 == 5)
 	            {
