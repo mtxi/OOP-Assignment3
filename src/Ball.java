@@ -7,17 +7,13 @@ public class Ball
     float speedY;
     PApplet ball;
     
-    Ball(float a, float b)
+    Ball(PApplet ba, float a, float b)
     {
-        x = a;
+    	ball = ba;
+    	speedY = ball.random(-4, -2);
+    	x = a;
         y = b;
         r = 20;
-    }
-    
-    Ball(PApplet b)
-    {
-    	ball = b;
-    	speedY = ball.random(-4, -2);
     }
     
     public void display()

@@ -15,18 +15,15 @@ public class LeftPaddle
 
   boolean intersect = false;
 
-  LeftPaddle(float x_, float y_) 
-  {
-    x = x_;
-    y = y_;
-  }
   
-  LeftPaddle(PApplet l)
+  LeftPaddle(PApplet l, float x_, float y_)
   {
 	  lp = l;
 	  w = 20;
 	  h = 100;
 	  c = lp.color(255);
+	  x = x_;
+	  y = y_;
   }
 
   public void display() 

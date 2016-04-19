@@ -15,16 +15,13 @@ public class RightPaddle
 
   boolean intersect = false;
 
-  RightPaddle(float x_, float y_) 
-  {
-    x = x_;
-    y = y_;
-  }
   
-  RightPaddle(PApplet r)
+  RightPaddle(PApplet r, float x_, float y_)
   {
 	  rp = r;
 	  c = rp.color(255);
+	  x = x_;
+	  y = y_;
   }
   public void display() 
   {

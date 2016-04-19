@@ -1,6 +1,6 @@
 // OOP Assignment #3
 // DT228/2 >> 2015-2016
-// Program based on the classic game of Pong / Ping-pong in real life
+// Program based on the classic game of PONG / PingPong in real life
 import processing.core.*;
 
 public class PingPong extends PApplet
@@ -9,10 +9,14 @@ public class PingPong extends PApplet
 	 * 
 	 */
 	private static final long serialVersionUID = 2417473051777472017L;
+	
+	// declare constructors
 	Ball ball;
 	LeftPaddle lPaddle;
 	RightPaddle rPaddle;
 	MidLine mLine;
+	
+	// declare variables
 	float speedX = -4;
 	
 	int scoreP1 = 0;
@@ -29,9 +33,9 @@ public class PingPong extends PApplet
 	    smooth();
 	    frameRate(30);
 	    
-	    ball = new Ball(400, 250);
-	    lPaddle = new LeftPaddle(60, height/2);
-	    rPaddle = new RightPaddle(740, height/2);
+	    ball = new Ball(this, 400, 250);
+	    lPaddle = new LeftPaddle(this, 60, height/2);
+	    rPaddle = new RightPaddle(this, width - 50, height/2);
 	    mLine = new MidLine(this);
 	    
 	}
@@ -177,6 +181,7 @@ public class PingPong extends PApplet
 	    click = true;
 	}
 	
+	// main function, --present activate full screen
 	public static void main(String args[]) {
 	    PApplet.main(new String[] { "--present", "PingPong" });
 	  }
