@@ -158,20 +158,23 @@ public class PingPong extends PApplet
 	    else
 	    {
 	        background(0);
-	        textAlign(CENTER);
+	        
 	        fill(255);
 	        textSize(160);
-	        text("P     N G", width/2, height/2);
-	        textSize(2);
-	        text("Click to begin!", width/2, height/2+80);
+	        text("P     N G", width/2 + 50, height/2);
+	        textSize(30);
+	        text("Click to begin!", width/2 - 100, height/2+100);
 	        fill(3, 255, 29);
 	        textSize(180);
-	        text("0", width/4 + 102, height/2 + 5);
+	        fill(255, 0, 0);
+	        ellipse(width/2 + 270, height/2 - 55, 55*2, 55*2);
+	        textSize(160);
+	        text("P  !  N G", width/2 - 670, height/2);
 	        fill(255);
 	        textAlign(LEFT);
 	        textSize(15);
-	        text("Player 1: up = 'W', down = 'S'", 40, height);
-	        text("Player 2: up = 'UP arrow', down = 'DOWN arrow'", 40, height);
+	        text("Player 1: up = 'W', down = 'S'", 40, height - 70);
+	        text("Player 2: up = 'UP arrow', down = 'DOWN arrow'", 40, height - 50);
 	        text("Score 5 points to win! :)",width*1/2, height);
 	    }
 	}
