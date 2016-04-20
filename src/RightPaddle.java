@@ -6,7 +6,7 @@ public class RightPaddle
   float x;
   float y;
   float w = 20;
-  float h = 100;
+  float h = 120;
   int c;
   PApplet rp;
 
@@ -19,7 +19,7 @@ public class RightPaddle
   RightPaddle(PApplet r, float x_, float y_)
   {
 	  rp = r;
-	  c = rp.color(255);
+	  c = rp.color(54,183,115);
 	  x = x_;
 	  y = y_;
   }

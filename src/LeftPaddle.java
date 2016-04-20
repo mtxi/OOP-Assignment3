@@ -7,7 +7,8 @@ public class LeftPaddle
   float y;
   float w;
   float h;
-  int c;
+  int c1;
+  int c2;
   PApplet lp;
 
   boolean goUp = false;
@@ -20,18 +21,17 @@ public class LeftPaddle
   {
 	  lp = l;
 	  w = 20;
-	  h = 100;
-	  c = lp.color(255);
+	  h = 120;
+	  c1 = lp.color(54,123,183);
 	  x = x_;
 	  y = y_;
   }
 
   public void display() 
   {
-    lp.fill(c);
+    lp.fill(c1);
     lp.rectMode(PApplet.CENTER);
-    lp.noStroke();
-
+    lp.stroke(2);
     lp.rect(x, y, w, h);
     y = PApplet.constrain(y, 0+h/2, lp.height-h/2);
   }
