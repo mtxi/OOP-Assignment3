@@ -16,6 +16,7 @@ public class PingPong extends PApplet
 	RightPaddle rPaddle;
 	MidLine mLine;
 	Score scorep;
+	MainMenu menu;
 	
 	// declare variables
 	float speedX = -4;
@@ -29,8 +30,6 @@ public class PingPong extends PApplet
 	
 	boolean click = false;
 	
-	PFont myFont = createFont("GillSansMT", 48);
-	
 	public void setup()
 	{
 	    size(displayWidth,displayHeight);
@@ -42,6 +41,7 @@ public class PingPong extends PApplet
 	    rPaddle = new RightPaddle(this, width - 50, height/2);
 	    mLine = new MidLine(this);
 	    scorep = new Score(this);
+	    menu = new MainMenu(this);
 	}
 	
 	
@@ -168,26 +168,7 @@ public class PingPong extends PApplet
 	    
 	    else
 	    {
-	        background(52, 50, 50);
-	        
-	        textFont(myFont);
-	        fill(255);
-	        textSize(160);
-	        text("P     N G", width/2 + 50, height/2);
-	        textSize(30);
-	        text("CLICK to start!", width/2 - 100, height/2+100);
-	        fill(3, 255, 29);
-	        textSize(180);
-	        fill(255, 0, 0);
-	        ellipse(width/2 + 270, height/2 - 55, 55*2, 55*2);
-	        textSize(160);
-	        text("P  !  N G", width/2 - 670, height/2);
-	        fill(255);
-	        textAlign(LEFT);
-	        textSize(15);
-	        text("Player 1: up = 'W', down = 'S'", width-500, height - 130);
-	        text("Player 2: up = 'UP arrow', down = 'DOWN arrow'", width-500, height - 110);
-	        text("Score 5 points to win! :)",width*1/2, height);
+	        menu.display();
 	    }
 	}
 	
