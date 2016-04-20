@@ -22,7 +22,7 @@ public class Score
 			x = (float) (Size*i*2 + score.width/1.4);
 			y = 43;
 			score.stroke(2);
-			score.fill(255, 0, 0);
+			score.fill(245, 7, 11);
 			score.ellipse(x-(score.width/2) - 80,y,Size*2,Size*2);
 		}
 		
@@ -31,7 +31,7 @@ public class Score
 			x = (float) (Size*i*2 + score.width/1.4);
 			y = 43;
 			score.stroke(2);
-			score.fill(255, 0, 0);
+			score.fill(245, 7, 11);
 			score.ellipse(x - 70,y,Size*2,Size*2);
 			
 		}

@@ -19,7 +19,7 @@ public class Ball
     public void display()
     {
         ball.noStroke();
-        ball.fill(3, 255, 29);
+        ball.fill(245, 7, 11);
         ball.ellipse(x, y, r*2, r*2);
     }
     
