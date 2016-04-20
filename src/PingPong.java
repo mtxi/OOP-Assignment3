@@ -19,7 +19,7 @@ public class PingPong extends PApplet
 	MainMenu menu;
 	
 	// declare variables
-	float speedX = -4;
+	float speedX = -5;
 	
 	// static so other classes can access these variables
 	static int scoreP1 = 0;
@@ -53,6 +53,8 @@ public class PingPong extends PApplet
 	        if (p1Win)
 	        {
 	            textAlign(CENTER);
+	            fill(125);
+	            rect(300,300,width,height);
 	            fill(255);
 	            textSize(50);
 	            text("Player 1 wins!", width/2, height/2);
@@ -66,6 +68,13 @@ public class PingPong extends PApplet
 	                    p1Win = false;
 	                    scoreP1 = 0;
 	                    scoreP2 = 0;
+	                }
+	                if (key == 'c')
+	                {
+	                	p1Win = false;
+	                	menu.display();
+	                	scoreP1 = 0;
+	                	scoreP2 = 0;
 	                }
 	            }
 	        }
@@ -86,6 +95,12 @@ public class PingPong extends PApplet
 	                    p2Win = false;
 	                    scoreP1 = 0;
 	                    scoreP2 = 0;
+	                }
+	                if (key == 'c')
+	                {
+	                	p2Win = false;
+	                	scoreP1 = 0;
+	                	scoreP2 = 0;
 	                }
 	            }
 	        }
