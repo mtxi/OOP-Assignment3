@@ -8,7 +8,6 @@ public class Score
 	
 	int Size = 15;
 	
-	
 	Score(PApplet sc)
 	{
 		score = sc;

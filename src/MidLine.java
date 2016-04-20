@@ -19,11 +19,10 @@ public class MidLine
     {
         for (i = 0; i < ml.height+50; i += 50)
         {
-            ml.fill(255);
+            ml.fill(ml.random(50,255));
             ml.noStroke();
             ml.rectMode(PApplet.CENTER);
             ml.rect(ml.width/2, i, 7, 30);
-            ml.ellipse(ml.width/2, i, 40, 40);
         }
     }
     
