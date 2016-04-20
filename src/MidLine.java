@@ -23,6 +23,7 @@ public class MidLine
             ml.noStroke();
             ml.rectMode(PApplet.CENTER);
             ml.rect(ml.width/2, i, 7, 30);
+            ml.ellipse(ml.width/2, i, 40, 40);
         }
     }
     

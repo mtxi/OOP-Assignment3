@@ -6,35 +6,31 @@ public class Score
 	float x;
 	float y;
 	
-	int Size;
+	int Size = 15;
 	
 	
-	Score(PApplet sc, int Size)
+	Score(PApplet sc)
 	{
 		score = sc;
-		Size = 20;
 		
 	}
-	
 	
 	public void display()
 	{
 		for (int i = 0; i < PingPong.scoreP1; i++)
 		{
-			x = (float) ((Size*i) + 200);
-			y = 50;
-			score.noStroke();
-			score.fill(0);
-			score.ellipse(x+300,y,Size*2,Size*2);
+			x = (float) (Size*i*2 + score.width/1.4);
+			y = 43;
+			score.fill(255, 0, 0);
+			score.ellipse(x-(score.width/2) - 50,y,Size*2,Size*2);
 		}
 		
 		for (int i = 0; i < PingPong.scoreP2; i++)
 		{
-			x = (float) ((Size*i) + score.width/2);
-			y = 2*score.width/3;
-			score.noStroke();
-			score.fill(255);
-			score.ellipse(x+200,y+38,Size*2,Size*2);
+			x = (float) (Size*i*2 + score.width/1.4);
+			y = 43;
+			score.fill(255, 0, 0);
+			score.ellipse(x + 5,y,Size*2,Size*2);
 			
 		}
 	}

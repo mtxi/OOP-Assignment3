@@ -41,7 +41,7 @@ public class PingPong extends PApplet
 	    lPaddle = new LeftPaddle(this, 60, height/2);
 	    rPaddle = new RightPaddle(this, width - 50, height/2);
 	    mLine = new MidLine(this);
-	    scorep = new Score(this,30);
+	    scorep = new Score(this);
 	}
 	
 	
@@ -141,8 +141,8 @@ public class PingPong extends PApplet
 	            textAlign(CENTER);
 	            textSize(20);
 	            fill(255);
-	            text("PLAYER 1: " + scoreP1, 200, 50);
-	            text("PLAYER 2: " + scoreP2, 1150, 50);
+	            text("PLAYER 1: " + scoreP1, 100, 50);
+	            text("PLAYER 2: " + scoreP2, 800, 50);
 	            
 	            if (scoreP1 > 0 || scoreP2 > 0)
 	            {
