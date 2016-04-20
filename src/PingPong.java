@@ -10,7 +10,6 @@ public class PingPong extends PApplet
 	 */
 	private static final long serialVersionUID = 2417473051777472017L;
 	
-	// declare constructors
 	Ball ball;
 	LeftPaddle lPaddle;
 	RightPaddle rPaddle;
@@ -37,6 +36,7 @@ public class PingPong extends PApplet
 	    smooth();
 	    frameRate(30);
 	    
+	    //create objects
 	    ball = new Ball(this, 400, 250);
 	    lPaddle = new LeftPaddle(this, 60, height/2);
 	    rPaddle = new RightPaddle(this, width - 50, height/2);
