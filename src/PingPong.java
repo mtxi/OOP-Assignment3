@@ -21,6 +21,7 @@ public class PingPong extends PApplet
 	// declare variables
 	float speedX = -4;
 	
+	// static so other classes can access these variables
 	static int scoreP1 = 0;
 	static int scoreP2 = 0;
 	
@@ -139,8 +140,8 @@ public class PingPong extends PApplet
 	            textAlign(CENTER);
 	            textSize(20);
 	            fill(255);
-	            text("PLAYER 1: " + scoreP1, 100, 50);
-	            text("PLAYER 2: " + scoreP2, 800, 50);
+	            text("PLAYER 1: ", 100, 50);
+	            text("PLAYER 2: ", 800, 50);
 	            
 	            if (scoreP1 > 0 || scoreP2 > 0)
 	            {

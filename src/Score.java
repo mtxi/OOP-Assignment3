@@ -23,7 +23,7 @@ public class Score
 			y = 43;
 			score.stroke(2);
 			score.fill(255, 0, 0);
-			score.ellipse(x-(score.width/2) - 50,y,Size*2,Size*2);
+			score.ellipse(x-(score.width/2) - 80,y,Size*2,Size*2);
 		}
 		
 		for (int i = 0; i < PingPong.scoreP2; i++)

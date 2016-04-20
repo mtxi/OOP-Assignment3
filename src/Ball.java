@@ -10,7 +10,7 @@ public class Ball
     Ball(PApplet ba, float a, float b)
     {
     	ball = ba;
-    	speedY = ball.random(-4, -2);
+    	speedY = ball.random(-3,-1);
     	x = a;
         y = b;
         r = 20;
@@ -30,7 +30,7 @@ public class Ball
         
         if ( y + r > ball.height || y - r < 0 )
         {
-            speedY *= -1;
+            speedY *= -1.5;
         }
     }
     
