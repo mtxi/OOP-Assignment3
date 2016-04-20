@@ -54,7 +54,7 @@ public class PingPong extends PApplet
 	        {
 	            textAlign(CENTER);
 	            fill(125);
-	            rect(300,300,width,height);
+	            rect(150,300,510,150);
 	            fill(255);
 	            textSize(50);
 	            text("Player 1 wins!", width/2, height/2);
@@ -73,6 +73,7 @@ public class PingPong extends PApplet
 	                {
 	                	p1Win = false;
 	                	menu.display();
+	                	click = false;
 	                	scoreP1 = 0;
 	                	scoreP2 = 0;
 	                }
@@ -99,6 +100,8 @@ public class PingPong extends PApplet
 	                if (key == 'c')
 	                {
 	                	p2Win = false;
+	                	menu.display();
+	                	click = false;
 	                	scoreP1 = 0;
 	                	scoreP2 = 0;
 	                }
