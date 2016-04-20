@@ -53,23 +53,22 @@ public class PingPong extends PApplet
 	        if (p1Win)
 	        {
 	            textAlign(CENTER);
-	            fill(125);
-	            rect(150,300,510,150);
 	            fill(255);
-	            textSize(50);
+	            textSize(40);
 	            text("Player 1 wins!", width/2, height/2);
-	            textSize(25);
-	            text("press 'R' to restart", width/2, height/2 + 40);
+	            textSize(20);
+	            text("Press R to restart", width/2, height/2 + 40);
+	            text("or press C to go back", width/2, height/2 + 60);
 	            
 	            if (keyPressed)
 	            {
-	                if (key == 'r')
+	                if (key == 'r') // press R to restart
 	                {
 	                    p1Win = false;
 	                    scoreP1 = 0;
 	                    scoreP2 = 0;
 	                }
-	                if (key == 'c')
+	                if (key == 'c') // press C to go back to menu + reset
 	                {
 	                	p1Win = false;
 	                	menu.display();
@@ -161,8 +160,14 @@ public class PingPong extends PApplet
 	            text("PLAYER 1: ", 100, 50);
 	            text("PLAYER 2: ", 800, 50);
 	            
+	            noFill();
+	            stroke(255);
+	            strokeWeight(5);
+	            ellipse(width,height/2,500,500);
+	            
 	            if (scoreP1 > 0 || scoreP2 > 0)
 	            {
+	            	// if a player scores, display red circle
 	            	scorep.display();
 	            }
 	            
