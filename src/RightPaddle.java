@@ -27,7 +27,8 @@ public class RightPaddle
   {
     rp.fill(c);
     rp.rectMode(PApplet.CENTER);
-    rp.noStroke();
+    rp.stroke(0);
+    rp.strokeWeight(2);
 
     rp.rect(x, y, w, h);
     y = PApplet.constrain(y, 0+h/2, rp.height-h/2);

@@ -70,8 +70,8 @@ public class PingPong extends PApplet
 	                }
 	                if (key == 'c') // press C to go back to menu + reset
 	                {
-	                	p1Win = false;
 	                	menu.display();
+	                	p1Win = false;
 	                	click = false;
 	                	scoreP1 = 0;
 	                	scoreP2 = 0;
@@ -98,8 +98,8 @@ public class PingPong extends PApplet
 	                }
 	                if (key == 'c')
 	                {
-	                	p2Win = false;
 	                	menu.display();
+	                	p2Win = false;
 	                	click = false;
 	                	scoreP1 = 0;
 	                	scoreP2 = 0;
@@ -113,8 +113,15 @@ public class PingPong extends PApplet
 	            
 	            mLine.display();
 	            
+	            noFill();
+	            stroke(random(125,255));
+	            strokeWeight(4);
+	            ellipse(width,height/2,500,500);
+	            ellipse(0,height/2,500,500);
+	            
 	            ball.display();
 	            ball.move(speedX);
+	            
 	            
 	            lPaddle.display();
 	            rPaddle.display();
@@ -159,14 +166,11 @@ public class PingPong extends PApplet
 	            fill(255);
 	            text("PLAYER 1: ", 100, 50);
 	            text("PLAYER 2: ", 800, 50);
-	            
-	            noFill();
-	            stroke(255);
-	            strokeWeight(5);
-	            ellipse(width,height/2,500,500);
+	          
 	            
 	            if (scoreP1 > 0 || scoreP2 > 0)
 	            {
+	            	strokeWeight(1);
 	            	// if a player scores, display red circle
 	            	scorep.display();
 	            }

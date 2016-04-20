@@ -31,7 +31,8 @@ public class LeftPaddle
   {
     lp.fill(c1);
     lp.rectMode(PApplet.CENTER);
-    lp.stroke(2);
+    lp.stroke(0);
+    lp.strokeWeight(2);
     lp.rect(x, y, w, h);
     y = PApplet.constrain(y, 0+h/2, lp.height-h/2);
   }

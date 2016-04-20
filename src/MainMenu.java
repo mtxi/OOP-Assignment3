@@ -36,15 +36,15 @@ public class MainMenu {
         menu.textSize(160);
         menu.text("P  !  N G", menu.width/2 - 670, menu.height/2);
         
-        menu.fill(125);
-        menu.rect(rectX, rectY, rectWidth, rectHeight);
         menu.fill(255);
         menu.textAlign(PApplet.LEFT);
+        
         menu.textSize(20);
-        menu.text("PLAYER CONTROLS", menu.width-800, menu.height - 160);
+        menu.text("PLAYER CONTROLS", menu.width-800, menu.height - 130);
         
         menu.textSize(15);
-        menu.text("PLAYER 1: up = 'W' || down = 'S'", menu.width-800, menu.height - 130);
-        menu.text("PLAYER 2: up = 'UP arrow' || down = 'DOWN arrow'", menu.width-800, menu.height - 110);
+        menu.text("PLAYER 1: up = 'W' || down = 'S'", menu.width-800, menu.height - 90);
+        menu.text("PLAYER 2: up = 'UP arrow' || down = 'DOWN arrow'", menu.width-800, menu.height - 70);
+        
 	}
 }
