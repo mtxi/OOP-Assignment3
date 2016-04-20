@@ -28,6 +28,7 @@ public class MainMenu {
         menu.textSize(160);
         menu.text("P     N G", menu.width/2 + 50, menu.height/2);
         menu.textSize(30);
+        menu.fill(252,138,140);
         menu.text("CLICK to start!", menu.width/2 - 80, menu.height/2+100);
         menu.fill(3, 255, 29);
         menu.textSize(180);
